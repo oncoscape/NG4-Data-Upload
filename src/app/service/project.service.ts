@@ -40,7 +40,11 @@ export class ProjectService {
   }
   getProjectsByIDs(ids: string[]): Observable<Response> {
     return this.http.get(this.projectsUrl, {headers: this.headers})
-               .map(res => res.json().filter(value => ids.indexOf(value._id) > -1));
+               .map(res => {
+               var msg= res.json()
+               if(msg.name == 'JsonWebTokenError') return []
+               return msg.filter(value => ids.indexOf(value._id) > -1) 
+              });
 
   }
 

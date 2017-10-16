@@ -41,7 +41,9 @@ export class PermissionService {
   }
   getPermissionsByIDs(ids: string[]): Observable<Response> {
     return this.http.get(this.permissionsUrl, {headers: this.headers})
-            .map(res => res.json().filter(value => ids.indexOf(value._id) > -1));
+            .map(res => 
+              res.json()
+              .filter(value => ids.indexOf(value._id) > -1));
   }
   getPermissionByUserByProject(userID: string, projectID: string): Observable<Permission> {
     return this.http.get(this.permissionsUrl, {headers: this.headers})
