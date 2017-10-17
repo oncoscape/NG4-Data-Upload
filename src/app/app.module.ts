@@ -4,9 +4,8 @@ import { HttpModule } from '@angular/http';
 import { Router, RouterModule } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
-import { AppRouterModule } from './app-router.module';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
@@ -14,6 +13,9 @@ import 'rxjs/add/operator/catch';
 import * as hello from 'hellojs';
 import * as _ from 'underscore';
 import { FileSelectDirective, FileDropDirective, FileUploadModule } from 'ng2-file-upload';
+
+import { AppComponent } from './app.component';
+import { AppRouterModule } from './app-router.module';
 import { UsersComponent } from './users/users.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -24,14 +26,15 @@ import { RegisterComponent } from './register/register.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PermissionsComponent, UserFullNamePipe } from './permissions/permissions.component';
 import { FilesComponent, Overlapping} from './files/files.component';
+import { HelpComponent } from './help/help.component';
+
 import { UserService } from './service/user.service';
 import { StateService } from './service/state.service';
 import { FileService } from './service/file.service';
 import { PermissionService } from './service/permission.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginService } from './service/login.service';
-import { HelpComponent } from './help/help.component';
 import { UpdateEmitService } from './service/update-emit.service';
+
 @NgModule({
   declarations: [
     AppComponent,

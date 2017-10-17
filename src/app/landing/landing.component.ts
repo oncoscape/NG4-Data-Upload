@@ -1,10 +1,12 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
+import { Observable, BehaviorSubject, Subject } from 'rxjs/Rx';
+import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { StateService } from '../service/state.service';
 import { UserService } from '../service/user.service';
-import { Router } from '@angular/router';
-import { Observable, BehaviorSubject, Subject } from 'rxjs/Rx';
 import { LoginService } from '../service/login.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',

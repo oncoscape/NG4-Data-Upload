@@ -1,15 +1,17 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from '../models/user';
-import { UserService } from '../service/user.service';
-import { UserEmailValidators } from '../validators/userEmail.validator';
 import { Headers, Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/switchMap';
+import { Observable } from 'rxjs/Observable';
+
+import { User } from '../models/user';
+import { UserEmailValidators } from '../validators/userEmail.validator';
+import { UserService } from '../service/user.service';
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',

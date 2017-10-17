@@ -42,7 +42,7 @@ export class ProjectService {
     return this.http.get(this.projectsUrl, {headers: this.headers})
                .map(res => {
                var msg= res.json()
-               if(msg.name == 'JsonWebTokenError') return []
+               if(typeof msg.name != 'undefined') return []
                return msg.filter(value => ids.indexOf(value._id) > -1) 
               });
 

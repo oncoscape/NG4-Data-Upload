@@ -1,17 +1,17 @@
-import { Component, Output, Input, EventEmitter, OnInit} from '@angular/core';
-import { environment } from './../../environments/environment';
-import { Injectable } from '@angular/core';
+import { Component, Output, Input, EventEmitter, OnInit, Injectable} from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
-import * as hello from 'hellojs';
-import { StateService } from '../service/state.service';
 import { Router } from '@angular/router';
 import { Observable} from 'rxjs/Observable';
+import * as hello from 'hellojs';
+
+import { environment } from './../../environments/environment';
+import { StateService } from '../service/state.service';
 import { UserService } from '../service/user.service';
 import { User } from '../models/user';
+
 @Injectable()
 export class LoginService {
 
-    
   GOOGLE_CLIENT_ID = '459144121975-lp2p5kahpqahm2gffgtl31vv0nes9hj4.apps.googleusercontent.com';
   oauthServiceStatus: EventEmitter<any> ;
   constructor(private stateService: StateService,
@@ -29,7 +29,7 @@ export class LoginService {
         scope: 'email'
 
       });
-      hello.on('auth', function() {console.log('state changed!'); });
+      hello.on('auth', function() {console.log('Updating User Authentication'); });
       hello.on('auth.login', this.authLogin.bind(this));
       hello.on('auth.logout', this.authLogout.bind(this));
   }
